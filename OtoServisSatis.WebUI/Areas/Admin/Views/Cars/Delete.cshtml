@@ -1,0 +1,68 @@
+﻿@model OtoServisSatis.Entity.Arac
+
+@{
+    ViewData["Title"] = "Aracı Sil";
+}
+
+<h1>Aracı Sil</h1>
+
+<h3>Aracı silmek istediğine emin misin?</h3>
+<div>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Renk)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Renk)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Fiyati)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Fiyati)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Modeli)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Modeli)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.KasaTipi)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.KasaTipi)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ModelYili)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ModelYili)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.SatistaMi)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.SatistaMi)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Notlar)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Notlar)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Marka)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Marka.Adi)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-action="Index">Back to List</a>
+    </form>
+</div>

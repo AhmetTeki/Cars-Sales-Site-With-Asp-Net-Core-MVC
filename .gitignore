@@ -1,0 +1,33 @@
+.vs/
+# Build klasörleri
+bin/
+obj/
+
+# Rider IDE klasörleri
+.idea/
+
+# Windows dosyaları
+Thumbs.db
+desktop.ini
+
+# ReSharper ve Rider
+_ReSharper*/
+*.[Rr]e[Ss]harper
+.idea/
+*.DotSettings.user
+
+# Backup dosyaları
+*_backup
+*.bak
+
+# Temporary files
+*.tmp
+*.temp
+*.cache
+*.diff
+*.patch
+
+# Git özellikleri
+*.orig
+
+OtoServisSatis.Data/DataBaseContext.cs
