@@ -1,0 +1,53 @@
+﻿@model IEnumerable<OtoServisSatis.Entity.Slider>
+
+@{
+    
+}
+
+<!DOCTYPE html>
+
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Baslık)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Acıklama)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Resim)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Link)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Baslık)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Acıklama)
+            </td>
+            <td>
+                <img src="~/Img/Cars/@item.Resim">
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Link)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-primary" >Düzenle</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger" >Sil</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

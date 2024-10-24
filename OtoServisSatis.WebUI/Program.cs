@@ -15,7 +15,7 @@ builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationSc
     x.AccessDeniedPath = "/AccessDeniedPath";
     x.LogoutPath = "/Admin/LogoutPath";
     x.Cookie.Name = "Admin";
-    x.Cookie.MaxAge= TimeSpan.FromDays(1);
+    x.Cookie.MaxAge= TimeSpan.FromMinutes(5);
     x.Cookie.IsEssential = true;
 }
 );

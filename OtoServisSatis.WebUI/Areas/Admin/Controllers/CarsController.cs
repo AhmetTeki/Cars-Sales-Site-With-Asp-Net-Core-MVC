@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using OtoServisSatis.Entity;
 using OtoServisSatis.Servis;
+using OtoServisSatis.WebUI.Util;
 
 namespace OtoServisSatis.WebUI.Areas.Admin.Controllers
 {
@@ -42,12 +43,15 @@ namespace OtoServisSatis.WebUI.Areas.Admin.Controllers
         // POST: CarsController/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> CreateAsync(Arac arac)
+        public async Task<ActionResult> CreateAsync(Arac arac, IFormFile? Resim1, IFormFile? Resim2, IFormFile? Resim3)
         {
             try
             {
-               await _service.AddAsync(arac);
-                _service.Save();
+                arac.Resim1 = await FileHelper.FileLoaderAsync(Resim1);
+                arac.Resim2 = await FileHelper.FileLoaderAsync(Resim2);
+                arac.Resim3 = await FileHelper.FileLoaderAsync(Resim3);
+                await _service.AddAsync(arac);
+                await _service.SaveAsync();
                 return RedirectToAction(nameof(Index));
             }
             catch
@@ -69,11 +73,25 @@ namespace OtoServisSatis.WebUI.Areas.Admin.Controllers
         // POST: CarsController/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> EditAsync(int id, Arac arac)
+        public async Task<ActionResult> EditAsync(int id, Arac arac, IFormFile? Resim1, IFormFile? Resim2, IFormFile? Resim3)
         {
             try
             {
-                 _service.Update(arac);
+                if (Resim1 is not null)
+                {
+                    arac.Resim1 = await FileHelper.FileLoaderAsync(Resim1);
+                }
+                if (Resim2 is not null)
+                {
+                    arac.Resim2 = await FileHelper.FileLoaderAsync(Resim2);
+                }
+                if (Resim3 is not null)
+                {
+                    arac.Resim3 = await FileHelper.FileLoaderAsync(Resim3);
+                }
+
+
+                _service.Update(arac);
                 await _service.SaveAsync();
                 return RedirectToAction(nameof(Index));
             }

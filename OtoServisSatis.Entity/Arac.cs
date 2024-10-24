@@ -24,6 +24,9 @@ namespace OtoServisSatis.Entity
         [Display(Name = "Stok Durumu")]
         public bool SatistaMi { get; set; }
         public string Notlar { get; set; }
+        public string? Resim1 { get; set; }
+        public string? Resim2 { get; set; }
+        public string? Resim3 { get; set; }
         public virtual Marka Marka { get; set; }
     }
 }

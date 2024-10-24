@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using OtoServisSatis.Data;
 
@@ -11,9 +12,10 @@ using OtoServisSatis.Data;
 namespace OtoServisSatis.Data.Migrations
 {
     [DbContext(typeof(DataBaseContext))]
-    partial class DataBaseContextModelSnapshot : ModelSnapshot
+    [Migration("20241022010646_AracResimEklendi")]
+    partial class AracResimEklendi
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -127,7 +129,7 @@ namespace OtoServisSatis.Data.Migrations
                             Id = 21,
                             Adi = "Admin",
                             AktifMi = true,
-                            EklenmeTarihi = new DateTime(2024, 10, 22, 5, 4, 6, 167, DateTimeKind.Local).AddTicks(4468),
+                            EklenmeTarihi = new DateTime(2024, 10, 22, 4, 6, 46, 179, DateTimeKind.Local).AddTicks(5769),
                             Email = "admin@otoservissatis.tc",
                             KullaniciAdi = "admin",
                             RolId = 1,
@@ -308,31 +310,6 @@ namespace OtoServisSatis.Data.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Servisler");
-                });
-
-            modelBuilder.Entity("OtoServisSatis.Entity.Slider", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
-
-                    b.Property<string>("Acıklama")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Baslık")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Link")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Resim")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Sliders");
                 });
 
             modelBuilder.Entity("OtoServisSatis.Entity.Arac", b =>
