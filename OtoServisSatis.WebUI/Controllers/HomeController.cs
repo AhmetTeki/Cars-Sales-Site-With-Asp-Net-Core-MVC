@@ -1,4 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using OtoServisSatis.Entity;
+using OtoServisSatis.Servis;
 using OtoServisSatis.WebUI.Models;
 using System.Diagnostics;
 
@@ -6,16 +8,21 @@ namespace OtoServisSatis.WebUI.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
+        
+        private readonly IService<Arac> _serviceArac;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(IService<Arac> serviceArac)
         {
-            _logger = logger;
+            _serviceArac = serviceArac;
         }
 
-        public IActionResult Index()
+        public  IActionResult Index()
         {
-            return View();
+
+            var model = _serviceArac.GetAll();
+            
+            
+            return View(model);
         }
 
         public IActionResult Privacy()

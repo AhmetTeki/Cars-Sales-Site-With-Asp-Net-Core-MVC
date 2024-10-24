@@ -1,0 +1,29 @@
+﻿@using OtoServisSatis.Entity;
+@model Arac
+@{
+    ViewData["Title"] = Model.Modeli;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+
+    <div class="container text-center">
+        <div class="row te">
+            
+            <div class="col-md-12">
+                <h1>@Model.Modeli</h1>
+                <h1>@Model.ModelYili</h1>
+                <p>@Model.Fiyati</p>
+                <p><strong></strong> @Model.Notlar</p>
+                <a asp-controller="" asp-action="Index" class="btn btn-secondary">Geri Dön</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

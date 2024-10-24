@@ -35,6 +35,7 @@ namespace OtoServisSatis.WebUI.Areas.Admin.Controllers
                 if(account==null)
                 {
                     TempData["Mesaj"] = "Email veya Şifreniz Yanlış";
+                    return Redirect("/Admin/Login");
                 }
                 else
                 {
