@@ -3,7 +3,7 @@ Projenin doğru çalışması için OtoServisSatis.Data klasörünün altına "D
 
 
 
-using Microsoft.EntityFrameworkCore;
+"using Microsoft.EntityFrameworkCore;
 using OtoServisSatis.Entity;
 
 namespace OtoServisSatis.Data
@@ -49,7 +49,7 @@ namespace OtoServisSatis.Data
             base.OnModelCreating(modelBuilder);
         }
     }
-}
+}"
 
 
 
