@@ -4,19 +4,8 @@ Projenin doğru çalışması için OtoServisSatis.Data klasörünün altına "D
 
 
 using Microsoft.EntityFrameworkCore;
-**********************************************************************************************************************************************
 using OtoServisSatis.Entity;
-**********************************************************************************************************************************************
-using System;
-**********************************************************************************************************************************************
-using System.Collections.Generic;
-**********************************************************************************************************************************************
-using System.Linq;
-**********************************************************************************************************************************************
-using System.Text;
-**********************************************************************************************************************************************
-using System.Threading.Tasks;
-**********************************************************************************************************************************************
+
 namespace OtoServisSatis.Data
 {
     public class DataBaseContext : DbContext
@@ -28,39 +17,39 @@ namespace OtoServisSatis.Data
         public DbSet<Rol> Roller { get; set; }
         public DbSet<Satis> Satislar { get; set; }
         public DbSet<Servis> Servisler { get; set; }
-        public DbSet<Slider> Sliders{ get; set; }
+        public DbSet<Slider> Sliders { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(@" *************************************************************************************");
+            optionsBuilder.UseSqlServer(@"server=(localdb)\MSSQLLocalDB; database=OtoServisSatis;Integrated Security=True; MultipleActiveResultSets= True;");
             base.OnConfiguring(optionsBuilder);
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Rol>().HasData(new Rol
             {
-                Id= 1,
-                Adi="Admin"
+                Id = 1,
+                Adi = "Admin"
             });
             modelBuilder.Entity<Kullanici>().HasData(new Kullanici
             {
-                Id= 21,
+                Id = 21,
                 Adi = "Admin",
-                Soyadi="admin",
-                Telefon="0850",
+                Soyadi = "admin",
+                Telefon = "0850",
                 AktifMi = true,
                 EklenmeTarihi = DateTime.Now,
                 Email = "admin@otoservissatis.tc",
                 KullaniciAdi = "admin",
                 Sifre = "123456",
-               /// Rol=new Rol { Id=1,},
+                /// Rol=new Rol { Id=1,},
                 RolId = 1,
-                
+
             });
             base.OnModelCreating(modelBuilder);
         }
     }
-} 
+}
 
 
 
