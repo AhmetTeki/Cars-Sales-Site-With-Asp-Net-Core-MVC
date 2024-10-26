@@ -1,4 +1,8 @@
-Projenin doğru çalışması için OtoServisSatis.Data klasörünün altına "DataBaseContext.cs" adında bir sınıf ekleyin. 
+Projenin doğru çalışması için OtoServisSatis.Data klasörünün altına "DataBaseContext.cs" adında bir sınıf ekleyin.
+
+
+
+
 using Microsoft.EntityFrameworkCore;
 using OtoServisSatis.Entity;
 using System;
@@ -6,9 +10,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
-
-
 namespace OtoServisSatis.Data
 {
     public class DataBaseContext : DbContext
@@ -53,6 +54,12 @@ namespace OtoServisSatis.Data
         }
     }
 } 
+
+
+
+
+
+
 ardından içine yukardaki kodu ekleyin
 ardından yukarıdaki koddaki ***************** ile işaretlediğim yere kendi veri tabanı yolunuzu ekleyin
 ardından OtoServisSatis.Data klasöründe terminal açıp sırasıyla "dotnet ef migrations add AddedNewColumn" ve "dotnet ef database update" kommutlarını çalıştırın
