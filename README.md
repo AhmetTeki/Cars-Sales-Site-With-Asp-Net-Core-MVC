@@ -4,7 +4,9 @@ Projenin doğru çalışması için OtoServisSatis.Data klasörünün altına "D
 
 
 using Microsoft.EntityFrameworkCore;
+**********************************************************************************************************************************************
 using OtoServisSatis.Entity;
+**********************************************************************************************************************************************
 using System;
 using System.Collections.Generic;
 using System.Linq;
