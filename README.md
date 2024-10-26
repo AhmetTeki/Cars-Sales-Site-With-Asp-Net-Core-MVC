@@ -2,7 +2,7 @@ Projenin doğru çalışması için OtoServisSatis.Data klasörünün altına "D
 
 
 
-
+```csharp
 "using Microsoft.EntityFrameworkCore;
 using OtoServisSatis.Entity;
 
